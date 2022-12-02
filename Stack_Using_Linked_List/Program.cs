@@ -40,11 +40,29 @@ namespace StackUsingLinkedList_CSharp
             fresh.next = top;
             top = fresh;
             Console.WriteLine("\n" + element + " pushed.");
+
         }
         public void pop()
         {
             Console.WriteLine("\nThe popped element is: " + top.info);
             top = top.next;   //Make top point to the next node is sequence
+        }
+
+        public void display()
+        {
+            Node tmp;
+
+            if (empty())  //If stack is empty
+                Console.WriteLine("\nStack is empty");
+            else
+            {
+                 //Traverse the list form beggining till end
+                for (tmp = top; tmp != null; tmp = tmp.next)
+                {
+                    Console.WriteLine(tmp.info);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
